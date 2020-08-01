@@ -1,0 +1,11 @@
+@mixin sp {
+  @media screen and (max-width: 768px){
+    @content;
+  }
+}
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

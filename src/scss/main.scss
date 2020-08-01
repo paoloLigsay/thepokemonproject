@@ -1,0 +1,425 @@
+// variables
+
+$primary: rgb(44, 31, 66);
+$secondary: rgb(33, 26, 46);
+$tertiary: rgb(54, 36, 83);
+
+$blueGreen: rgb(26, 246, 246);
+$green: rgb(0, 255, 179);
+$redViolet: rgb(255, 0, 98);
+$yellow: rgb(255, 204, 63);
+
+$white: #fff;
+
+// imports
+
+@import './mixin.scss';
+@import './anim.scss';
+
+// globals
+
+.overflowHidden {
+  overflow-y: hidden;
+}
+
+.sp-only {
+  display: none;
+  @include sp {
+    display: block;
+  }
+}
+
+.text {
+  font-size: 1.4rem;
+  color: $white;
+
+  &--20 {
+    font-size: 2rem;
+  }
+
+  &--25 {
+    font-size: 2.5rem;
+  }
+
+  &--30 {
+    font-size: 3rem;
+  }
+}
+
+.logo {
+  width: 80%;
+}
+
+.loader {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  border: 3px solid $secondary;
+  position: relative;
+
+  &--remove {
+    display: none;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: -3px;
+    top: -3px;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    border: 3px solid;
+    border-color: $blueGreen transparent transparent transparent;
+    animation: loader 1s infinite linear;
+  }
+}
+
+.load-more {
+  width: 60%;
+  margin: 30px 0;
+  padding: 20px 0;
+  text-align: center;
+  color: $white;
+  text-shadow: 1px 0px 14px rgba(255, 76, 207, 1);
+  font-size: 2.5rem;
+  background-color: $primary;
+  transition: all 200ms ease-in;
+  letter-spacing: 2px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    background-color: $tertiary;
+  }
+}
+
+input {
+  margin: 50px 0;
+  width: 60%;
+  margin-left: 25px;
+  height: 30px;
+}
+
+// scrollbar for body
+
+body::-webkit-scrollbar {
+  width: 1.5em;
+}
+ 
+body::-webkit-scrollbar-track {
+  background-color: $secondary;
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: $redViolet;
+}
+
+// vue typer
+
+.vue-typer {
+  .custom.char {
+    color: $white;
+    font-size: 2rem;
+  }
+}
+
+.pokemon-data__label {
+  color: $redViolet;
+  font-size: 2.5rem;
+  text-shadow: 1px 0px 14px rgba(240, 220, 230, 0.4);
+  margin-right: 10px;
+
+  &--mb25 {
+    margin-bottom: 25px;
+  }
+}
+
+.pokemon-data__info {
+  .vue-typer {
+    .custom.char {
+      color: $white;
+      font-size: 2.5rem;
+      text-shadow: 1px 0px 14px rgba(255, 76, 207, 1);
+    }
+  }
+}
+
+// pokemon Data holder
+
+.pokemon-data {
+  width: 59%;
+  height: 100%;
+  overflow-y: auto;
+  padding: 0 15px 0 0;
+
+  // scrollbar for data section
+
+  &::-webkit-scrollbar {
+    width: 1.5em;
+  }
+   
+  &::-webkit-scrollbar-track {
+    background-color: $secondary;
+  }
+   
+  &::-webkit-scrollbar-thumb {
+    background-color: $redViolet;
+  }
+
+  &__title {
+    font-size: 8rem;
+    color: $yellow;
+    text-shadow: 1px 0px 14px rgb(218, 115, 166);
+    margin-bottom: 50px;
+  }
+
+  &__subtitle {
+    font-size: 4rem;
+    color: $yellow;
+    text-shadow: 1px 0px 14px rgba(255, 76, 207, 1);
+    margin: 60px 0 40px;
+  }
+
+  &-ability {
+    margin-bottom: 50px;
+  }
+
+  &-row {
+    display: flex;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+
+    &--name {
+      .pokemon-data__info {
+        .vue-typer {
+          .custom.char {
+            font-size: 4rem;
+          }
+        }
+      }
+
+      .pokemon-data__label {
+        font-size: 4rem;
+      }
+    }
+  }
+
+  .text {
+    color: $white !important;
+  }
+
+  &-holder {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(31, 23, 27, 0.8);
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: auto;
+    bottom: auto;
+    z-index: 5;
+    display: none;
+  
+    &--active {
+      display: block;
+    }
+  }
+
+  &-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    padding: 50px;
+  }
+
+  &-image {
+    position: absolute;
+    left: auto;
+    top: 22%;
+    bottom: 0;
+    right: 50%;
+    transform: translateX(50%);
+    width: 60%;
+    height: auto;
+    z-index: 2;
+    animation: pokeballUpper 0.3s forwards ease-in;
+
+    &--bottom {
+      top: auto;
+      bottom: 25%;
+      z-index: 1;
+      animation: pokeBallLower 0.3s forwards ease-in;
+    }
+
+    &-main {
+      width: 40%;
+      height: auto;
+      opacity: 0;
+      animation: pokemonShow 1s forwards;
+      animation-delay: 0.5s;
+    }
+
+    &-container {
+      width: 40%;
+      height: 100%;
+      position: relative;
+      @include center;
+    }
+  }
+}
+
+// content
+
+.container {
+  background-color: $secondary;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.left-panel {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 35px 0;
+  position: fixed;
+  left: 0;
+  right: auto;
+  top: 0;
+  bottom: auto;
+
+  img {
+    margin-bottom: 10px;
+  }
+
+  .logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .text {
+      text-shadow: 1px 0px 14px rgba(255, 76, 207, 1);
+    }
+  }
+}
+
+.card {
+  width: 22%;
+  height: 20vw;
+  margin: 15px 1%;
+  background-color: $primary;
+  box-shadow: 13px 13px 5px -8px rgba(96, 157, 168, 0.3);
+  transition: all 200ms ease-in;
+  cursor: pointer;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 30%;
+    height: 5px;
+    background-color: rgba(96, 157, 168, 0.3);
+    top: 20px;
+    left: auto;
+    bottom: auto;
+    right: 50%;
+    transform: translateX(50%);
+    transition: all 200ms ease;
+  }
+
+  &:hover {
+    box-shadow: 13px 13px 5px -8px rgba(80, 190, 209, 0.6);
+
+    img {
+      opacity: 1;
+    }
+
+    &::before {
+      background-color: rgba(80, 190, 209, 0.6);
+      box-shadow: 0 0 15px -1px rgba(161, 241, 255, 0.6);
+    }
+  }
+
+  &:nth-of-type(3n+1) {
+    box-shadow: 13px 13px 5px -8px rgba(168, 96, 140, 0.3);
+
+    &::before {
+      background-color: rgba(168, 96, 140, 0.3);
+    }
+
+    &:hover {
+      box-shadow: 13px 13px 5px -8px rgba(168, 96, 140, 0.8);
+
+      &::before {
+        background-color: rgba(168, 96, 140, 0.8);
+        box-shadow: 0 0 15px -1px rgba(255, 118, 202, 0.8);
+      }  
+    }
+  }
+
+  &:nth-of-type(5n+1) {
+    box-shadow: 13px 13px 5px -8px rgba(207, 194, 118, 0.3);
+
+    &::before {
+      background-color: rgba(207, 194, 118, 0.3);
+    }
+
+    &:hover {
+      box-shadow: 13px 13px 5px -8px rgba(207, 194, 118, 0.8);
+
+      &::before {
+        background-color: rgba(207, 194, 118, 0.7);
+        box-shadow: 0 0 15px -1px rgba(255, 240, 158, 0.7);
+      }
+    }
+  }
+
+  div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 0 5% 10%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  img {
+    width: 70%;
+    height: auto;
+    margin-bottom: 5px;
+    opacity: 0.8;
+    transition: all 200ms ease-in;
+  }
+
+  .text {
+    text-shadow: 1px 0px 14px rgba(255, 76, 207, 1);
+  }
+
+  &-container {
+    width: 75%;
+    height: auto;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &-list {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-items: center;
+  }
+}
