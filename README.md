@@ -1,7 +1,7 @@
 # The Ultimate Pokedex 
 The Ultimate Pokedex is a Pokemon Collection Project Created for #PokeAddicts. This Project is created with VUE JS and PokeAPI. Please leave a star if you liked it! 
 
-![](/src/img/output.JPG)
+![](src/img/output.jpg)
 
 ## This Project is created for People who:
 * [ Pokemon Lover ] - people who loves Pokemon 
