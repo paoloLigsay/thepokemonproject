@@ -19,6 +19,18 @@
   }
 }
 
+@keyframes pokeballUpperSP {
+  0% {
+    left: 30%;
+    transform: rotate(0);
+  }
+
+  100% {
+    left: 0;
+    transform: rotate(-70deg);
+  }
+}
+
 @keyframes pokeBallLower {
   0% {
     bottom: 25%;
@@ -26,6 +38,18 @@
 
   100% {
     bottom: 0.1%;
+  }
+} 
+
+@keyframes pokeBallLowerSP {
+  0% {
+    right: 30%;
+    transform: rotate(0);
+  }
+
+  100% {
+    right: 0;
+    transform: rotate(-70deg);
   }
 } 
 

@@ -6,7 +6,7 @@
         <pokemonItem :pokemon="pokemon" v-on:showPokemonData="$emit('showPokemonData', pokemon.id)" />
       </li>
     </ul>
-    <div class="load-more" v-on:click="showList += 16"> LOAD MORE </div>
+    <div class="load-more" v-if="pokemons.length > 8" v-on:click="showList += 16"> LOAD MORE </div>
   </div>
 </template>
 

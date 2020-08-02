@@ -34,7 +34,7 @@
           <h4 class="pokemon-data__label pokemon-data__label--mb25"> {{ ability.abilityName }} </h4>
           <p class="pokemon-data__info">
             <vue-typer
-              type-delay='-50'
+              type-delay='1'
               :repeat='0'
               :text='ability.abilityDes || "null" '>
             </vue-typer>

@@ -97,7 +97,7 @@ export default {
     }
   },
   created() {
-    for (let i = 1; i < 800; i++) {
+    for (let i = 1; i < 807; i++) {
       this.getPokemons(i)
     }
   },
