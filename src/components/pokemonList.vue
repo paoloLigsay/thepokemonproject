@@ -26,7 +26,3 @@
     props: ["pokemons"],
   }
 </script>
-
-<style scoped>
-
-</style>

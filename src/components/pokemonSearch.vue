@@ -32,7 +32,7 @@
     <p class="text text--20 text--yellow sp-none"> DEVELOPMENT </p>
 
     <a target="_blank" href="https://github.com/paoloLigsay/thepokemonproject" class="text text--20 sp-none">
-      Github 
+      Fork in Github 
       <span class="text--yellow">
         [ thepokemonproject ] 
       </span> 
@@ -88,7 +88,3 @@
     },
   }
 </script>
-
-<style scoped>
-  
-</style>
