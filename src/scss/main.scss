@@ -496,6 +496,11 @@ body::-webkit-scrollbar-thumb {
     padding: 25px 5%;
   }
 
+  &--hide {
+    opacity: 0;
+    visibility: hidden;
+  }
+
   &--fixed {
     position: fixed;
     padding: 0 3%;

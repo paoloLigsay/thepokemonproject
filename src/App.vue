@@ -83,7 +83,8 @@ export default {
         .catch(err => console.log(err))
         .finally(
           res => {
-            console.table(res)
+            if(res != undefined || res !=null)
+              console.table(res)
             if(pokemonCount == 806) {
               const webLoader = document.querySelector('.web-loader')
               webLoader.classList.add('web-loader--done')
@@ -99,6 +100,9 @@ export default {
 
       const dataHolder = document.querySelector('.pokemon-data-holder')
       dataHolder.classList.add('pokemon-data-holder--active')
+
+      const searchBar = document.querySelector('.left-panel')
+      searchBar.classList.add('left-panel--hide')
 
       const body = document.querySelector('body')
       body.classList.add('overflowHidden')

@@ -58,9 +58,12 @@
     methods: {
       hideData() {
         const dataHolder = document.querySelector('.pokemon-data-holder')
-        dataHolder.classList.remove('pokemon-data-holder--active')
+        const searchBar = document.querySelector('.left-panel')
         const body = document.querySelector('body')
+
+        dataHolder.classList.remove('pokemon-data-holder--active')
         body.classList.remove('overflowHidden')
+        searchBar.classList.remove('left-panel--hide')
       }
     },
   }
