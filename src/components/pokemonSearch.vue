@@ -39,7 +39,7 @@
     </a>
 
     <a target="_blank" href="https://thecreativesdaily.com/paololigsay/" class="text text--20 sp-none">
-      Develepoed by 
+      Developer
       <span class="text--yellow">
         [ Paolo Ligsay ] 
       </span> 
