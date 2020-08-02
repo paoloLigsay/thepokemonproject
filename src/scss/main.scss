@@ -45,6 +45,36 @@ $white: #fff;
   }
 }
 
+.pokeball {
+  width: 80px;
+  height: auto;
+  animation: pokeball 3s infinite linear;
+}
+
+.web-loader {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: auto;
+  bottom: auto;
+  z-index: 10;
+  background-color: $primary;
+  @include center;
+  flex-direction: column;
+  transition: all 300ms ease;
+
+  img {
+    margin-bottom: 10px;
+  }
+
+  &--done {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
 .text {
   font-size: 1.4rem;
   color: $white;
@@ -472,6 +502,7 @@ body::-webkit-scrollbar-thumb {
     z-index: 9;
     background-color: $secondary;
     width: 100vw;
+    min-width: 100vw;
     height: 80px;
 
     .pokemon-search {

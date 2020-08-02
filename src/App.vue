@@ -1,5 +1,9 @@
 <template>
   <div class="container">
+    <div class="web-loader">
+      <img class="pokeball" src="./img/pokeball-dark.png" alt="pokeball">
+      <p class="text text--20"> catching pokemons... </p>
+    </div>
     <pokemonData :pokemonData="pokemonData" />
     <pokemonSearch :pokemons="pokemons" v-on:filterData="filterData" />
     <pokemonList :pokemons="pokemons" v-on:showPokemonData="showPokemonData" />
@@ -77,6 +81,15 @@ export default {
           }
         )
         .catch(err => console.log(err))
+        .finally(
+          res => {
+            console.table(res)
+            if(pokemonCount == 806) {
+              const webLoader = document.querySelector('.web-loader')
+              webLoader.classList.add('web-loader--done')
+            }
+          }
+        )
     },
     showPokemonData(id) {
       const pokemonData = this.pokemons.filter(
