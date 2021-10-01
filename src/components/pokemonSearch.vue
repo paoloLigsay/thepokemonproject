@@ -38,7 +38,7 @@
       </span> 
     </a>
 
-    <a target="_blank" href="https://thecreativesdaily.com/paololigsay/" class="text text--20 sp-none">
+    <a target="_blank" href="https://paolomartinligsay.netlify.app/" class="text text--20 sp-none">
       Developer
       <span class="text--yellow">
         [ Paolo Ligsay ] 
